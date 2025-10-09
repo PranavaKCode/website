@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vanessa Matvei's Site ♡</title>
+  <link rel="icon" type="image/png" href="https://imgur.com/o45kETm.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- (global) background canvas - footer-only petals are controlled by script.js -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  
+  <nav>
+    <a href="/" class="nav-btn">About</a>
+    <a href="/publications/" class="nav-btn">Publications</a>
+    <a href="/essays/" class="nav-btn">Essays</a>
+    <a href="/gallery/" class="nav-btn">Gallery</a>
+    <a href="/contact/" class="nav-btn nav-active">Contact</a>
+  </nav>
+  
+
+
+
+
+  <header class="hero">
+    <div class="hero-inner container">
+      <h1 class="hero-title">Vanessa Matvei</h1>
+      <p class="hero-sub">High-school Researcher · Creative Technologist · Athlete</p>
+    </div>
+  </header>
+
+  <main class="panel reveal container">
+    <section id="about" class="about-panel">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 style="font-family:'Playfair Display', serif; margin-bottom:12px;">About</h2>
+
+          <p>
+            I’ve always been pulled toward the places where worlds meet—where art, science, and technology cross paths to create something surprising.
+            For me, curiosity is the common thread. It’s Da Vinci’s <i>saper vedere</i> (“knowing how to see”), Ada Lovelace’s “poetical science,” and
+            Einstein’s claim that curiosity matters more than knowledge itself.
+          </p>
+
+          <p>
+            I don’t believe in being <i>just</i> “specialized.” Everything connects if you look closely enough:
+            algorithms mirror nature’s patterns, creativity shapes mathematics, and history sparks innovation.
+            Tracing those threads is what my work revolves around—<u>creating my life’s web.</u>
+          </p>
+
+          <p>
+            That curiosity also spills into the things that inspire me daily. Some are whimsical, like old Disney animations; others reach toward the 
+            infinite: a quiet night sky, the vastness of mountains, forests, and sea. I’m energized by movement and discipline in equal measure: running, 
+            swimming, and tennis keep me active, while the works of Monet, Klimt, Van Gogh, and the artistry of code keep my mind engaged.
+          </p>
+
+          <p>
+            As for what I’m chasing? Greatness. In the sense of becoming the fullest, most curious version of myself. Welcome to my portfolio.
+          </p>
+        </div>
+
+        <div class="about-image" aria-hidden="false">
+          <img
+            src="https://i.imgur.com/jl7STfv.png"
+            alt="Vanessa Matvei portrait"
+            loading="lazy"
+            width="400"
+            height="400"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <!-- Footer content (script will create canvas behind this) -->
+    <div class="footer-content">
+      <div class="signature footer-signature">
+        <img src="https://imgur.com/tWJ2kFF.png" alt="Signature of Vanessa">
+      </div>
+      <div class="copyright">
+        Copyright © 2025 Vanessa Matvei — All rights reserved.
+      </div>
+      <div class="footer-links" style="font-size:13px; margin-top:6px;">
+        <a href="https://github.com/vanessamatvei" target="_blank" rel="noopener">GitHub</a>
+        · <a href="https://www.linkedin.com/in/vanessa-matvei-a2935930b/" target="_blank" rel="noopener">LinkedIn</a>
+        · <a href="https://instagram.com/vanessa.mtvv" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
