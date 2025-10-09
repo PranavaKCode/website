@@ -10,24 +10,352 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Merriweather:wght@300;400;500&display=swap"
     rel="stylesheet"
   />
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    /* Contact page specific styles */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(33, 128, 141, 0.05), transparent);
+    }
+    
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    
+    .panel {
+      padding: 40px 0;
+    }
+    
+    .contact-area {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-area {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+    
+    .contact-form h2,
+    .contact-web h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 24px;
+      color: var(--color-text);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--color-text);
+      font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-base);
+      font-family: inherit;
+      font-size: 1rem;
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-submit {
+      margin-top: 24px;
+    }
+    
+    .btn-primary {
+      background: var(--color-primary);
+      color: var(--color-btn-primary-text);
+      border: none;
+      padding: 12px 32px;
+      border-radius: var(--radius-base);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-2px);
+    }
+    
+    .form-status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: var(--radius-base);
+      display: none;
+    }
+    
+    .form-status.success {
+      display: block;
+      background: rgba(var(--color-success-rgb), 0.1);
+      color: var(--color-success);
+      border: 1px solid var(--color-success);
+    }
+    
+    .form-status.error {
+      display: block;
+      background: rgba(var(--color-error-rgb), 0.1);
+      color: var(--color-error);
+      border: 1px solid var(--color-error);
+    }
+    
+    .email-contact {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .email-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    
+    .email-icon {
+      font-size: 1.5rem;
+    }
+    
+    .email-link {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 1.125rem;
+      transition: color 0.3s;
+    }
+    
+    .email-link:hover {
+      color: var(--color-primary-hover);
+      text-decoration: underline;
+    }
+    
+    .contact-web {
+      background: var(--color-surface);
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      height: fit-content;
+    }
+    
+    .section-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      margin-bottom: 16px;
+    }
+    
+    .profile-section,
+    .social-section {
+      margin-bottom: 32px;
+    }
+    
+    .profile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .profile-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-base);
+      color: var(--color-text);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .profile-link:hover {
+      background: var(--color-secondary);
+      border-color: var(--color-primary);
+      transform: translateX(4px);
+    }
+    
+    .link-arrow {
+      color: var(--color-primary);
+      font-size: 1.25rem;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-base);
+      color: var(--color-text);
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-btn-primary-text);
+      transform: translateY(-4px);
+    }
+    
+    .site-footer {
+      margin-top: 80px;
+      padding: 40px 0;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    
+    .footer-signature {
+      margin-bottom: 20px;
+    }
+    
+    .footer-signature img {
+      height: 60px;
+      width: auto;
+      opacity: 0.7;
+    }
+    
+    .copyright {
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
+    
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .separator {
+      color: var(--color-text-secondary);
+    }
+    
+    /* Petal animation container */
+    #petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .petal {
+      position: absolute;
+      top: -10px;
+      border-radius: 50%;
+      animation: fall linear infinite;
+      opacity: 0.6;
+    }
+    
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Background canvas for petal animation -->
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <!-- Petal animation container -->
+  <div id="petals" aria-hidden="true"></div>
 
   <!-- Navigation -->
-  <nav>
-    <a href="../" class="nav-btn">About</a>
-    <a href="../publications/" class="nav-btn">Publications</a>
-    <a href="../essays/" class="nav-btn">Essays</a>
-    <a href="../gallery/" class="nav-btn">Gallery</a>
-    <a href="./" class="nav-btn nav-active">Contact</a>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <div class="nav__brand">
+        <a href="../" class="nav__logo">Dheena Kumar</a>
+      </div>
+      
+      <div class="nav__menu" id="navMenu">
+        <a href="../" class="nav__link">About</a>
+        <a href="../publications/" class="nav__link">Publications</a>
+        <a href="../essays/" class="nav__link">Essays</a>
+        <a href="../gallery/" class="nav__link">Gallery</a>
+        <a href="./" class="nav__link nav__link--active">Contact</a>
+      </div>
+      
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Hero Section -->
@@ -39,16 +367,14 @@
   </header>
 
   <!-- Main Content -->
-  <main class="panel reveal container">
+  <main class="panel container">
     <section id="contact" class="contact-area">
 
       <!-- Contact Form -->
       <div class="contact-form" aria-labelledby="contact-form-heading">
-        <h2 id="contact-form-heading" style="font-family: 'Playfair Display', serif; margin-bottom:16px;">
-          Send a message
-        </h2>
+        <h2 id="contact-form-heading">Send a message</h2>
 
-        <form id="contactForm" method="POST" action="https://formspree.io/f/yourFormID" novalidate>
+        <form id="contactForm" method="POST" action="https://formspree.io/f/mqayyayd" novalidate>
           <!-- Honeypot field for bot protection -->
           <input type="text" name="_hp" style="display:none" tabindex="-1" autocomplete="off" />
 
@@ -90,7 +416,7 @@
 
       <!-- Social Links Section -->
       <aside class="contact-web" aria-label="Other contact methods">
-        <h3 style="font-family:'Playfair Display', serif; margin-bottom:16px;">Find me around the web</h3>
+        <h3>Find me around the web</h3>
 
         <!-- Profile Links -->
         <div class="profile-section">
