@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanessa Matvei | Contact</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/o45kETm.png">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- (global) background canvas - footer-only petals are controlled by script.js -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a href="/" class="nav-btn">About</a>
+    <a href="/publications/" class="nav-btn">Publications</a>
+    <a href="/essays/" class="nav-btn">Essays</a>
+    <a href="/gallery/" class="nav-btn">Gallery</a>
+    <a href="/contact/" class="nav-btn nav-active">Contact</a>
+  </nav>
+  
+
+
+  
+
+
+  <header class="hero">
+    <div class="hero-inner container">
+      <h1 class="hero-title">Contact &amp; Links</h1>
+      <p class="hero-sub">I'd love to hear from you — whether about research, collaboration, or just to say hi.</p>
+    </div>
+  </header>
+
+  <main class="panel reveal container">
+    <section id="contact" class="contact-area">
+      <!-- CONTACT FORM -->
+      <div class="contact-form" aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading" style="font-family: 'Playfair Display', serif; margin-bottom:12px;">
+          Send a message
+        </h2>
+
+        <!--
+          Form behavior:
+          - If you want to receive messages without backend setup, sign up at Formspree and replace the action value below:
+            action="https://formspree.io/f/yourFormID"
+          - If you don't set an action, the JS will fallback to opening a mailto: link using your email below.
+        -->
+        <form id="contactForm" method="POST" data-endpoint="https://formspree.io/f/yourFormID" novalidate>
+          <!-- Honeypot (bots fill this) -->
+          <input type="text" name="_hp" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <label for="firstName">First name</label>
+          <input id="firstName" name="firstName" type="text" required placeholder="Vanessa" />
+
+          <label for="lastName">Last name</label>
+          <input id="lastName" name="lastName" type="text" required placeholder="Matvei" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="yourname@example.com" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+
+          <div style="display:flex; gap:12px; align-items:center; margin-top:8px;">
+            <button type="submit" id="contactSubmit">Send message</button>
+            <div id="formStatus" aria-live="polite" style="color:#5a3f3a; font-weight:600;"></div>
+          </div>
+        </form>
+
+        <div style="margin-top:18px; color:#4f3d38;">
+          <p><strong>Or you can write me an email:</strong></p>
+          <div class="contact-info email-line">💌 <a href="mailto:vanessamatvei@gmail.com">vanessamatvei@gmail.com</a></div>
+        </div>
+      </div>
+
+
+        <!-- CONTACT INFO + SOCIAL ICONS -->
+        <aside class="contact-web" aria-label="Other contact methods">
+          <h3 style="font-family:'Playfair Display', serif; margin-bottom:10px;">Find me around the web</h3>
+        
+          <p style="color:#5a3f3a; margin-bottom:8px; font-weight:600;">Profiles</p>
+        
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="nav-btn" style="text-decoration:none; text-align:left;">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" class="nav-btn" style="text-decoration:none; text-align:left;">LinkedIn ↗</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener" class="nav-btn" style="text-decoration:none; text-align:left;">Instagram ↗</a>
+          </div>
+  
+
+        <div style="margin-top:18px;">
+          <p style="color:#5a3f3a; font-weight:700; margin-bottom:8px;">Social</p>
+          <div class="social-icons" aria-hidden="false">
+            <!-- SVG icons so you don't have to upload image files -->
+            <a href="https://github.com" target="_blank" title="GitHub" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="color:#3a2c2b">
+                <path d="M12 .5C5.73.5.75 5.48.75 11.74c0 4.9 3.16 9.06 7.55 10.53.55.1.75-.24.75-.53 0-.26-.01-1.12-.01-2.03-3.07.67-3.72-1.48-3.72-1.48-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.7-1.45-2.45-.28-5.03-1.23-5.03-5.48 0-1.21.43-2.19 1.13-2.96-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 012.75-.37 10.5 10.5 0 012.75.37c2.09-1.43 3.01-1.13 3.01-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.96 0 4.26-2.58 5.19-5.04 5.47.39.34.73 1 .73 2.02 0 1.46-.01 2.64-.01 3 .01.29.19.64.76.53 4.38-1.47 7.53-5.63 7.53-10.52C23.25 5.48 18.27.5 12 .5z"></path>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="color:#3a2c2b">
+                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 8.5h4.43V24H.24zM8.24 8.5h4.25v2.1h.06c.59-1.12 2.03-2.3 4.18-2.3 4.47 0 5.3 2.94 5.3 6.76V24h-4.43v-7.5c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.98V24H8.24z"></path>
+              </svg>
+            </a>
+
+           
+
+            <a href="https://instagram.com/" target="_blank" title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="color:#3a2c2b">
+                <path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.07 1.85.26 2.28.44.56.23.96.5 1.38.92.42.42.69.82.92 1.38.18.43.37 1.07.44 2.28.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.07 1.2-.26 1.85-.44 2.28-.23.56-.5.96-.92 1.38-.42.42-.82.69-1.38.92-.43.18-1.07.37-2.28.44-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.07-1.85-.26-2.28-.44-.56-.23-.96-.5-1.38-.92-.42-.42-.69-.82-.92-1.38-.18-.43-.37-1.07-.44-2.28C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.07-1.2.26-1.85.44-2.28.23-.56.5-.96.92-1.38.42-.42.82-.69 1.38-.92.43-.18 1.07-.37 2.28-.44C8.4 2.2 8.8 2.2 12 2.2zm0 2.1c-3.1 0-3.5 0-4.7.07-1 .06-1.6.25-1.97.42-.5.22-.86.48-1.24.86-.38.38-.64.74-.86 1.24-.17.37-.36.97-.42 1.97-.07 1.2-.07 1.6-.07 4.7s0 3.5.07 4.7c.06 1 .25 1.6.42 1.97.22.5.48.86.86 1.24.38.38.74.64 1.24.86.37.17.97.36 1.97.42 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1-.06 1.6-.25 1.97-.42.5-.22.86-.48 1.24-.86.38-.38.64-.74.86-1.24.17-.37.36-.97.42-1.97.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.06-1-.25-1.6-.42-1.97-.22-.5-.48-.86-.86-1.24-.38-.38-.74-.64-1.24-.86-.37-.17-.97-.36-1.97-.42-1.2-.07-1.6-.07-4.7-.07zM12 7.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 2.1a2.8 2.8 0 110 5.6 2.8 2.8 0 010-5.6zM17.4 6.6a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <!-- Footer content (script will create canvas behind this) -->
+    <div class="footer-content">
+      <div class="signature footer-signature">
+        <img src="https://drive.google.com/file/d/1shcE8A_4ISH0BgVdWTPgJYhU627ytwqD/preview" alt="Signature of Vanessa">
+      </div>
+      <div class="copyright">
+        Copyright © 2025 Dheena Kumar — All rights reserved.
+      </div>
+      <div class="footer-links" style="font-size:13px; margin-top:6px;">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        · <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main script -->
+  <script src="../script.js"></script>
+</body>
+</html>
