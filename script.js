@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           const subject = encodeURIComponent(`Website message from ${firstName} ${lastName}`);
           const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`);
-          window.location.href = `mailto:vanessamatvei@gmail.com?subject=${subject}&body=${body}`;
+          window.location.href = `mailto:totallyjohn369@gmail.com?subject=${subject}&body=${body}`;
           showStatus('Your email client should open. If not, use the email link below.', false);
         }
       } catch (err) {
